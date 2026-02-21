@@ -109,6 +109,7 @@ This `while` loop is the heart of every autonomous agent.
 # agent.py
 from mock_llm import mock_llm
 from tools import get_weather, calculator
+
 def run_agent(user_query):
     # 1. Initialize State
     history = [f"User: {user_query}"]
@@ -148,7 +149,7 @@ def run_agent(user_query):
 
         # 5. UPDATE STATE: Append result to history so LLM knows what happened
         history.append(f"Observation: {observation}")
-        print("") # formatting
+        print(" ") # formatting
 
     print("❌ Failed to reach goal within step limit.")
 
