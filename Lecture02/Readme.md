@@ -107,7 +107,8 @@ This `while` loop is the heart of every autonomous agent.
 
 ```python
 # agent.py
-
+from mock_llm import mock_llm
+from tools import get_weather, calculator
 def run_agent(user_query):
     # 1. Initialize State
     history = [f"User: {user_query}"]
@@ -154,6 +155,28 @@ def run_agent(user_query):
 # --- Run It ---
 if __name__ == "__main__":
     run_agent("What is the weather in Dubai?")
+```
+```python
+# agent_lab.py
+# main entry point
+#!/usr/bin/env python3
+"""
+Lab 2: ReAct Loop - Entry Point
+Run this file to execute the agent simulation.
+"""
+
+from agent import run_agent
+
+def main():
+    # 🎯 Define the user's goal
+    goal = "What is the weather in Dubai?"
+    
+    # 🚀 Run the agent
+    print(f"\n🏁 GOAL: {goal}\n")
+    run_agent(goal)
+
+if __name__ == "__main__":
+    main()
 ```
 
 ---
